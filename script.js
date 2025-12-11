@@ -11,11 +11,14 @@ function isSameType(value1, value2) {
 }
 
 function parseValue(v){
-	if(!isNaN(v) ){
+	if(typeof v === "string"){
+		v = v.trim();
+	}
+	if( typeof v === "string" && v !== "" && !isNaN(v)  ){
 		return Number(v);
 	}
 	return v;
-}
+} 
  
 // do not change the code below.
 let value1 = prompt("Enter Start of the Range.");
